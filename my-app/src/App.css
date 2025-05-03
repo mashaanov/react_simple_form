@@ -113,3 +113,58 @@ body {
 .table tr:last-child td {
   border-bottom: none;
 }
+
+/* Скрываем стандартный чекбокс */
+.form-check-input {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* При наведении на чекбокс */
+.form-check-input:hover {
+  border-color: #007bff;
+}
+
+/* Когда чекбокс отмечен */
+.form-check-input:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.5);
+}
+
+/* Добавляем кастомный стиль внутри чекбокса */
+.form-check-input:checked:before {
+  content: '\2714'; /* ✓ — символ галочки */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+/* Для метки рядом с чекбоксом */
+.form-check-label {
+  margin-left: 10px;
+  cursor: pointer;
+  user-select: none; /* Предотвращает выделение текста при клике */
+  font-size: 16px;
+  color: #495057;
+}
+
+/* При наведении на метку */
+.form-check-label:hover {
+  color: #007bff;
+}
